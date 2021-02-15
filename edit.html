@@ -58,10 +58,10 @@
         let lnk = document.querySelector("#url");
         // console.log(id);
         get_id(id).then((obj) => {
-            //  console.log(obj);
-            nm.value = obj.data.name;
-            cp.value = obj.data.caption;
-            lnk.value = obj.data.url;
+          console.log(obj);
+            nm.value = obj.name;
+            cp.value = obj.caption;
+            lnk.value = obj.url;
         })
 
 
