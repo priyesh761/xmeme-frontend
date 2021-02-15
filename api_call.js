@@ -1,6 +1,6 @@
 //import axios from "axios";
 
-const uri = "https://54.160.73.49:8081";
+const uri = "http://54.160.73.49:8081";
 //const uri = "http://127.0.0.1:8081";
 
 // Return latest 100 memes
