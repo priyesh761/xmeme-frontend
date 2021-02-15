@@ -1,12 +1,11 @@
-console.log(get);
 let wall = document.querySelector("#wall");
 
 const updateWall = () => {
   wall.innerHTML = "";
 
   get().then((data) =>
-    data.forEach((element) => {
-      console.log(element);
+    data.data.forEach((element) => {
+      // console.log(element);
       wall.innerHTML += `
     <div class="m-5">
         <div id=${element._id} class="card rounded col-12 col-md-6 col-lg-4 offset-md-2 offset-lg-3">
@@ -37,13 +36,12 @@ const updateWall = () => {
   );
 };
 
-const submitFormData = (e) => {
-  console.log("adding");
+const submitFormData = () => {
+  // console.log("adding");
   let nm = document.querySelector("#name").value;
   let cp = document.querySelector("#caption").value;
   let lnk = document.querySelector("#url").value;
 
   post({ name: nm, caption: cp, url: lnk }).then((res) => console.log(res));
   updateWall();
-  e.preventDefault();
 };

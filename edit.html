@@ -36,9 +36,7 @@
         </form>
 
     </div>
-    <script>
-
-    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -58,12 +56,12 @@
         let nm = document.querySelector("#name");
         let cp = document.querySelector("#caption");
         let lnk = document.querySelector("#url");
-        console.log(id);
+        // console.log(id);
         get_id(id).then((obj) => {
-            console.log(obj);
-            nm.value = obj.name;
-            cp.value = obj.caption;
-            lnk.value = obj.url;
+            //  console.log(obj);
+            nm.value = obj.data.name;
+            cp.value = obj.data.caption;
+            lnk.value = obj.data.url;
         })
 
 
@@ -76,7 +74,7 @@
                 caption: cp.value,
                 url: lnk.value
             }).then((res) => {
-                console.log(res);
+                console.log("success");
             }).catch(err => console.log(err.message));
             location.href = 'index.html';
         });
