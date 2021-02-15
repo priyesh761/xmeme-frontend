@@ -1,4 +1,4 @@
-const uri = "http://localhost:8081";
+const uri = "https://34.224.4.34:8081";
 
 // Return latest 100 memes
 const get = async () => {
