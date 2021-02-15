@@ -1,13 +1,12 @@
-const uri = "http://localhost:8081";
+//const uri = "https://xmeme-backend-v2.herokuapp.com";
+const uri = "http://127.0.0.1:8081";
 
 // Return latest 100 memes
 const get = async () => {
   // console.log("debug");
   return await fetch(uri + "/memes")
     .then((res) => res.json())
-    .then((dta) => {
-      return dta;
-    })
+    .then((dta) => dta)
     .catch((err) => console.log(err.message));
 };
 
@@ -15,7 +14,8 @@ const get = async () => {
 const get_id = async (id) => {
   return await fetch(uri + `/memes/${id}`)
     .then((res) => res.json())
-    .catch((err) => console.log(err.message));
+    .then((data) => data)
+    .catch((err) => console.log(err));
 };
 
 // Add new meme to meme stream
@@ -32,6 +32,7 @@ const post = async (obj) => {
     },
   })
     .then((response) => response.json())
+    .then((data) => data)
     .catch((err) => console.log(err));
 };
 
@@ -50,5 +51,6 @@ const patch = async (obj) => {
     },
   })
     .then((response) => response.json())
+    .then((data) => data)
     .catch((err) => console.log(err));
 };
