@@ -35,13 +35,3 @@ const updateWall = () => {
     })
   );
 };
-
-const submitFormData = () => {
-  //console.log("adding");
-  let nm = document.querySelector("#name").value;
-  let cp = document.querySelector("#caption").value;
-  let lnk = document.querySelector("#url").value;
-
-  post({ name: nm, caption: cp, url: lnk }).then((res) => console.log(res));
-  updateWall();
-};

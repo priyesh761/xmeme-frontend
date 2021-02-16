@@ -1,5 +1,5 @@
-//const uri = "https://xmeme-backend-v2.herokuapp.com";
-const uri = "http://127.0.0.1:8081";
+const uri = "https://xmeme-backend-v2.herokuapp.com";
+//const uri = "http://127.0.0.1:8081";
 
 // Return latest 100 memes
 const get = async () => {
@@ -22,14 +22,14 @@ const get_id = async (id) => {
 const post = async (obj) => {
   return await fetch(uri + "/memes/", {
     method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
     body: JSON.stringify({
       name: obj.name,
       caption: obj.caption,
       url: obj.url,
     }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
   })
     .then((response) => response.json())
     .then((data) => data)
@@ -40,15 +40,15 @@ const post = async (obj) => {
 const patch = async (obj) => {
   return await fetch(uri + `/memes/${obj.id}`, {
     method: "PATCH",
+    headers: {
+      Accept: "application/json",
+      "Content-type": "application/json; charset=UTF-8",
+    },
     body: JSON.stringify({
       name: obj.name,
       caption: obj.caption,
       url: obj.url,
     }),
-    headers: {
-      Accept: "application/json",
-      "Content-type": "application/json; charset=UTF-8",
-    },
   })
     .then((response) => response.json())
     .then((data) => data)
