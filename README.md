@@ -4,7 +4,7 @@ A meme stream where every one can add memes
 
 Frontend Deployment link - https://x-meme-priyesh.netlify.app/
 
-Backend Deployment link - https://xmeme-backend-v2.herokuapp.com/
+Backend api Deployment link - https://xmeme-backend-v2.herokuapp.com/<endpoint>
 
 Backend api endpoints - 
 
