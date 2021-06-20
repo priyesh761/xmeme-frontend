@@ -67,3 +67,31 @@ const updateWall = async () => {
 
   return sub;
 };
+
+
+//current page of post
+let pageNo = 0;
+updateWall();
+
+document.querySelector('#submit').addEventListener('click', async (e) => {
+  e.preventDefault();
+  let nm = document.querySelector("#name").value;
+  let cp = document.querySelector("#caption").value;
+  let lnk = document.querySelector("#url").value;
+
+  post({ name: nm, caption: cp, url: lnk }).then((res) => {
+    updateWall();
+  });
+});
+
+//Load next page
+const loadNext = async () => {
+  pageNo++;
+  pageNo -= await updateWall(pageNo);
+}
+
+//Load previous page
+const loadPrev = async () => {
+  pageNo--;
+  pageNo += await updateWall(pageNo);
+}
