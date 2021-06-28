@@ -20,7 +20,7 @@ const updateWall = async () => {
   var sub = 0;
   if (pageNo < 0) return 1;
 
-  await get_page(pageNo).then((data) => {
+  return get_page(pageNo).then((data) => {
     if (data == null || data.length == 0) {
       sub = 1;
       return;
@@ -63,9 +63,10 @@ const updateWall = async () => {
     // scroll to top after adding content
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    return sub;
   });
 
-  return sub;
+  
 };
 
 
