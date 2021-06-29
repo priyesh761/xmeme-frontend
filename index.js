@@ -48,7 +48,7 @@ const updateWall = async () => {
           </button>
         
             </div>
-            <img src="loading.svg" data-src="${element.url}" alt="image not found" class="card-img-top" alt="loading..." >
+            <img src="loading.svg" data-src="${element.url}" alt="image not found" class="card-img-top" alt="loading..." height=400px >
             <div class="card-body">
                 <p class="card-text">${element.caption}</div>
             </div>
